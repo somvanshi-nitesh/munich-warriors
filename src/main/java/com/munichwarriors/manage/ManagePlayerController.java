@@ -1,6 +1,7 @@
 package com.munichwarriors.manage;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +38,19 @@ public class ManagePlayerController {
     }
     
     @PostMapping("/addPlayersDetails")
-    public Player addPlayer(@RequestBody Player player) {
-    	return playerRepository.save(player);
+    public ResponseEntity<?> addPlayer(@RequestBody Player player) {
+    	// Remove any explicit setting of PLAYER_ID
+        player.setPlayerId(null);
+        // Check if a player with the same first name and last name exists
+        Optional<Player> existingPlayer = playerRepository.findByFirstNameAndLastName(player.getFirstName(), player.getLastName());
+
+        if (existingPlayer.isPresent()) {
+            // A player with the same first name and last name already exists
+            return ResponseEntity.badRequest().body("A player with the same first name and last name already exists.");
+        } else {
+            // No existing player with the same first name and last name, so save the new player
+            Player savedPlayer = playerRepository.save(player);
+            return ResponseEntity.ok(savedPlayer);
+        }
     }
 }
