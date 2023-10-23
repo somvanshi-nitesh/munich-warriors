@@ -39,8 +39,6 @@ public class ManagePlayerController {
     
     @PostMapping("/addPlayersDetails")
     public ResponseEntity<?> addPlayer(@RequestBody Player player) {
-    	// Remove any explicit setting of PLAYER_ID
-        player.setPlayerId(null);
         // Check if a player with the same first name and last name exists
         Optional<Player> existingPlayer = playerRepository.findByFirstNameAndLastName(player.getFirstName(), player.getLastName());
 
