@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "ba8fee89-3700-4e85-9799-d0bda9f77578",
+		"name": "munich-warrior",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4283783"
+	},
+	"item": [
+		{
+			"name": "GetAllPlayersDetails",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "d8b2d981-99b1-4f30-a885-13825b834fda",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/getPlayersDetails",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"getPlayersDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddPlayer",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "d8b2d981-99b1-4f30-a885-13825b834fda",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Binesh\",\r\n    \"lastName\": \"Chinnari\",\r\n    \"country\": \"United States\",\r\n    \"role\": \"Batsman\",\r\n    \"battingHand\": \"Right-Handed\",\r\n    \"bowlingStyle\": \"Medium Pace\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/addPlayersDetails",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"addPlayersDetails"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

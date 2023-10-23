@@ -22,7 +22,7 @@ public class ManageMunichWarriorsApp {
 		
 		ApplicationContext ctx = SpringApplication.run(ManageMunichWarriorsApp.class, args);
 
-        // List all bean names in the application context
+        // List all bean 	 in the application context
 //        String[] beanNames = ctx.getBeanDefinitionNames();
 //        for (String beanName : beanNames) {
 //            System.out.println(beanName);
