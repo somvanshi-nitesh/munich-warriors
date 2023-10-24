@@ -6,13 +6,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.0-SNAPSHOT</version>
+		<version>3.1.5</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.munichwarriors</groupId>
-	<artifactId>manage</artifactId>
+	<artifactId>munichwarriorsmanagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>manage</name>
+	<name>munichwarriorsBackend</name>
 	<description>SpringBoot project for Munich Warriors Management</description>
 	<properties>
 		<java.version>17</java.version>
@@ -30,104 +30,101 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-graphql</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-quartz</artifactId>
-		</dependency>
-		<!--<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.session</groupId>
-			<artifactId>spring-session-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>-->
+		<!--	<dependency>
+			<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+		<artifactId>spring-session-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-webflux</artifactId>
+		<artifactId>spring-webflux</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.graphql</groupId>
-			<artifactId>spring-graphql-test</artifactId>
+		<groupId>org.springframework.graphql</groupId>
+		<artifactId>spring-graphql-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.restdocs</groupId>
-			<artifactId>spring-restdocs-mockmvc</artifactId>
+		<groupId>org.springframework.restdocs</groupId>
+		<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
-		</dependency>
+		</dependency>-->
 		<!--<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>-->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-		</dependency>
+		</dependency>-->
 
 	</dependencies>
 
 	<build>
 		<plugins>
-			<plugin>
+			<!--		<plugin>
 				<groupId>org.asciidoctor</groupId>
-				<artifactId>asciidoctor-maven-plugin</artifactId>
-				<version>2.2.1</version>
+			<artifactId>asciidoctor-maven-plugin</artifactId>
+			<version>2.2.1</version>
 				<executions>
 					<execution>
-						<id>generate-docs</id>
+			<id>generate-docs</id>
 						<phase>prepare-package</phase>
 						<goals>
-							<goal>process-asciidoc</goal>
+			<goal>process-asciidoc</goal>
 						</goals>
 						<configuration>
-							<backend>html</backend>
+			<backend>html</backend>
 							<doctype>book</doctype>
-						</configuration>
+			</configuration>
 					</execution>
 				</executions>
-				<dependencies>
+			<dependencies>
 					<dependency>
-						<groupId>org.springframework.restdocs</groupId>
-						<artifactId>spring-restdocs-asciidoctor</artifactId>
-						<version>${spring-restdocs.version}</version>
+			<groupId>org.springframework.restdocs</groupId>
+			<artifactId>spring-restdocs-asciidoctor</artifactId>
+			<version>${spring-restdocs.version}</version>
 					</dependency>
-				</dependencies>
+			</dependencies>
 			</plugin>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<excludes>
+			<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
+			<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
-				</configuration>
-			</plugin>
+			</configuration>
+			</plugin>-->
 		</plugins>
 	</build>
 	<repositories>
