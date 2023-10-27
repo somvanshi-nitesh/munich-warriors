@@ -39,6 +39,13 @@ public class ManagePlayerController {
 		return ResponseEntity.ok(allPlayers);
 
 	}
+	
+	@GetMapping("/birthwish")
+	public ResponseEntity<String> birthdayWish() {
+
+		return ResponseEntity.ok("Happy Birthday");
+
+	}
 
 	@PostMapping("/addPlayersDetails")
 	public ResponseEntity<?> addPlayer(@RequestBody Player player) {
