@@ -37,6 +37,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -128,7 +129,18 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>3.1.5</version>
+			</plugin>
+			<plugin>
+				<groupId>com.heroku.sdk</groupId>
+				<artifactId>heroku-maven-plugin</artifactId>
+				<version>3.0.5</version>
+				<configuration>
+					<appName>munichwarriors-heroku</appName>
+					<includes>
+						<include>
+							target/munichwarriorsmanagement-0.0.1-SNAPSHOT.jar</include>
+					</includes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
