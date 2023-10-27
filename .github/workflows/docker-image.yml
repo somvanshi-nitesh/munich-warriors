@@ -1,0 +1,46 @@
+name: Docker Build and Tag
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Docker
+      uses: docker/setup-qemu-action@v1
+
+    - name: Build and Tag Docker Image
+      run: |
+        # Format the current date as ddMMYYYY
+        DATE=$(date +'%d%m%Y')
+
+        # Build and tag the Docker image
+        docker build -t your-image-name:$DATE -f Dockerfile .
+
+        # Log in to Docker Hub or your container registry if needed
+        # docker login -u USERNAME -p PASSWORD
+
+        # Push the Docker image to your container registry
+        # docker push your-image-name:$DATE
+      env:
+        DOCKER_CLI_ASK = "false"
+
+    - name: Set Git user and email
+      run: |
+        git config --global user.email "niteshsomvanshi.it@gmail.com"
+        git config --global user.name "somvanshi-nitesh"
+
+    - name: Create and Push Tag
+      run: |
+        # Create a Git tag with the formatted date
+        git tag $DATE
+
+        # Push the tag to your GitHub repository
+        git push origin $DATE
