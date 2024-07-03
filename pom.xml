@@ -37,6 +37,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <scope>runtime</scope>
+</dependency>
 
 		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -135,7 +140,7 @@
 				<artifactId>heroku-maven-plugin</artifactId>
 				<version>3.0.5</version>
 				<configuration>
-					<appName>munichwarriors-heroku</appName>
+					<appName>munich-warriors</appName>
 					<includes>
 						<include>
 							target/munichwarriorsmanagement-0.0.1-SNAPSHOT.jar</include>
